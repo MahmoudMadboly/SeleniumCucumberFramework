@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends PageBase{
 	
@@ -26,5 +27,6 @@ public class LoginPage extends PageBase{
 	
 	public void clickLogin() {
 		driver.findElement(loginButton).click();
+		waitSomeTime(ExpectedConditions.presenceOfElementLocated(DashboardPage.dashboard), 5);
 	}
 }
