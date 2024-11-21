@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AddAdminPage;
 import pages.DashboardPage;
+import pages.LoginPage;
 import tests.TestBase;
 
 public class AddAdminSteps {
@@ -14,15 +16,24 @@ public class AddAdminSteps {
 	WebDriver driver = TestBase.driver;
 	DashboardPage DashboardPageObject;
 	AddAdminPage AddAdminPageObject;
+	LoginPage LoginPageObject;
 	
 
-	@Given("User on dashboard screen")
-	public void user_on_dashboard_screen() {
+	@Given("^User login with (.*) and (.*)$")
+	public void User_login_with_username_and_password(String loginUserName , String LoginPassWord) {
 		
+		LoginPageObject = new LoginPage(driver);
+		LoginPageObject.enterUserName(loginUserName);
+		LoginPageObject.enterpassword(LoginPassWord);
+		LoginPageObject.clickLogin();
+	}
+	
+	@When("user on dashboard screen")
+	public void user_on_dashboard_screen() {
 		driver.getTitle().contains("Dashboard");
 	}
 
-	@When("User clicks on admin button at side bar menu")
+	@And("User clicks on admin button at side bar menu")
 	public void User_clicks_on_admin_button_at_side_bar_menu() {
 
 		DashboardPageObject = new DashboardPage(driver);
@@ -36,27 +47,15 @@ public class AddAdminSteps {
 		AddAdminPageObject.clickOnAddUserButton();
 	}
 	
-	@And("^User enter (.*) and (.*) and (.*) and (.*) $")
+	@And("^User enter (.*) and (.*) and (.*) and (.*)$")
 	public void User_enter_user_info(String EmployeeName , String UserName , String PASSWORD , String CONFIRMPASSWORD ) {
 		
-		AddAdminPageObject = new AddAdminPage(driver);
 		AddAdminPageObject.setReuiredInfo(EmployeeName, UserName, PASSWORD, CONFIRMPASSWORD);
 	}
+	
+	@And("user clicks on save button")
+	public void user_clicks_on_save_button() {
+		
+		AddAdminPageObject.userClicksOnSaveButton(); 
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
