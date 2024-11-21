@@ -18,6 +18,6 @@ public class DashboardPage extends PageBase{
 	public void clickOnAdminButton() {
 		
 		driver.findElement(adminButton).click();
-		waitSomeTime(ExpectedConditions.presenceOfElementLocated(AddAdminPage.systemUserTitle), 3);
+		waitSomeTime(ExpectedConditions.elementToBeClickable(AddAdminPage.addAdminButton), 5);
 	}
 }

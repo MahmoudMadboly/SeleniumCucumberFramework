@@ -15,8 +15,6 @@ public class LoginPage extends PageBase{
 	By loginButton = By.xpath("//button [text() = ' Login ']");
 
 	
-	
-	
 	public void enterUserName(String userName) {
 		driver.findElement(username).sendKeys(userName);
 	}
