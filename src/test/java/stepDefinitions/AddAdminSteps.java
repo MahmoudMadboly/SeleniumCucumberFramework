@@ -48,7 +48,7 @@ public class AddAdminSteps {
 	}
 	
 	@And("^User enter (.*) and (.*) and (.*) and (.*)$")
-	public void User_enter_user_info(String EmployeeName , String UserName , String PASSWORD , String CONFIRMPASSWORD ) {
+	public void User_enter_user_info(String EmployeeName , String UserName , String PASSWORD , String CONFIRMPASSWORD ) throws InterruptedException{
 		
 		AddAdminPageObject.setReuiredInfo(EmployeeName, UserName, PASSWORD, CONFIRMPASSWORD);
 	}

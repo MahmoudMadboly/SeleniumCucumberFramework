@@ -19,4 +19,9 @@ public class PageBase {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
 		return wait.until(condition);
 	}
+	
+	public void waitImplicitelly(long implicitTime) {
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitTime));
+	}
 }
