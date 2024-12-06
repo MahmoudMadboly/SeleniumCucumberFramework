@@ -14,10 +14,11 @@ public class DashboardPage extends PageBase{
 	
 	public static By dashboard = By.xpath("//h6 [text() = 'Dashboard']");
 	public static By adminButton = By.xpath("//span [text() = 'Admin']");
+	public static By FirstEmployeeNameAtAdmintable = By.xpath("//span [text() = 'Admin']");
 	
 	public void clickOnAdminButton() {
 		
 		driver.findElement(adminButton).click();
-		waitSomeTime(ExpectedConditions.elementToBeClickable(AddAdminPage.addAdminButton), 5);
+		waitSomeTime(ExpectedConditions.elementToBeClickable(UserManagementpage.addAdminButton), 10);
 	}
 }

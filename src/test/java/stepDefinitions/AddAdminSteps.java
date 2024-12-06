@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import pages.AddAdminPage;
 import pages.DashboardPage;
 import pages.LoginPage;
+import pages.UserManagementpage;
 import tests.TestBase;
 
 public class AddAdminSteps {
@@ -17,6 +18,7 @@ public class AddAdminSteps {
 	DashboardPage DashboardPageObject;
 	AddAdminPage AddAdminPageObject;
 	LoginPage LoginPageObject;
+	UserManagementpage UserManagementpageObject;
 	
 
 	@Given("^User login with (.*) and (.*)$")
@@ -43,8 +45,9 @@ public class AddAdminSteps {
 	@And("User clicks on add button")
 	public void User_clicks_on_add_button() {
 		
-		AddAdminPageObject = new AddAdminPage(driver);
-		AddAdminPageObject.clickOnAddUserButton();
+		UserManagementpageObject = new UserManagementpage(driver);
+		UserManagementpageObject.getFirst_Employee_Name();
+		UserManagementpageObject.clickOnAddUserButton();
 	}
 	
 	@And("^User enter (.*) and (.*) and (.*) and (.*)$")
@@ -52,7 +55,7 @@ public class AddAdminSteps {
 
 	public void User_enter_user_info(String EmployeeName , String UserName , String PASSWORD , String CONFIRMPASSWORD )throws InterruptedException {
 
-		
+		AddAdminPageObject = new AddAdminPage(driver);
 		AddAdminPageObject.setReuiredInfo(EmployeeName, UserName, PASSWORD, CONFIRMPASSWORD);
 	}
 	

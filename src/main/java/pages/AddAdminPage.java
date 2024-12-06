@@ -16,7 +16,7 @@ public class AddAdminPage extends PageBase{
 	}
 
 	public static By systemUserTitle = By.xpath("//h5 [text() = 'System Users']");
-	protected static By addAdminButton = By.xpath("//button[text()=' Add ']");
+	
 	By userRoleMenu = By.xpath("//div [text() = '-- Select --'][1]");
 	By userRole = By.xpath("//div [span[text()='Admin']]");
 	By employeeName = By.xpath("//input[@placeholder='Type for hints...']");
@@ -30,10 +30,7 @@ public class AddAdminPage extends PageBase{
 	By addUsertitle = By.xpath("//h6 [text() = 'Add User']");
 	By addUserSaveButton = By.xpath("//button [text() = ' Save '");
 
-	public void clickOnAddUserButton() {
-
-		driver.findElement(addAdminButton).click();
-	}
+	
 
 
 	public void setReuiredInfo (String employee_Name , String user_name , String pass_word , String confirm_password)throws InterruptedException  {
