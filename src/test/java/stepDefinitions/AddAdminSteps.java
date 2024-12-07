@@ -46,7 +46,6 @@ public class AddAdminSteps {
 	public void User_clicks_on_add_button() {
 		
 		UserManagementpageObject = new UserManagementpage(driver);
-		UserManagementpageObject.getFirst_Employee_Name();
 		UserManagementpageObject.clickOnAddUserButton();
 	}
 	

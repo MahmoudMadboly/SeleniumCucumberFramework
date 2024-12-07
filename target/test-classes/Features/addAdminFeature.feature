@@ -10,6 +10,6 @@ And user clicks on save button
 
 
 Examples:
-|loginUserName  | LoginPassWord  |EmployeeName|UserName |PASSWORD|CONFIRMPASSWORD|
+|loginUserName|LoginPassWord|EmployeeName|UserName |PASSWORD|CONFIRMPASSWORD|
 
-|Admin          |admin123 |manda akhil user|Madboly     |510520@Mm|510520@Mm     |
+|admin|admin123|Eunice Fleming|Madboly     |510520@Mm|510520@Mm  |

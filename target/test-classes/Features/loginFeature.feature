@@ -7,6 +7,5 @@ And user press on login button
 Then screen should redirect to dashboard
 
 Examples:
-
 |username|password|
-|Admin|admin123|
+|admin|admin123|
